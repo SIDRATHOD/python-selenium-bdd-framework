@@ -1,0 +1,7 @@
+{
+  "base_url": "test_data/qa-lead-assignment-homepage.html",
+  "username": "testuser",
+  "password": "test@123",
+  "small_image": "test_data/small_image.jpg",
+  "large_image": "test_data/large_image.jpg"
+}

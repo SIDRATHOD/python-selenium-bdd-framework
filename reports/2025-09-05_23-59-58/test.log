@@ -1,0 +1,43 @@
+2025-09-05 23:59:58,692 - INFO - ===== Starting Test Suite  =====
+2025-09-06 00:00:00,030 - INFO - ===== Starting scenario: Validate profile picture upload by file size -- @1.1  =====
+2025-09-06 00:00:00,111 - INFO - Typing into element: ('id', 'signup-username') -> testuser
+2025-09-06 00:00:00,261 - INFO - Typing into element: ('id', 'signup-password') -> test@123
+2025-09-06 00:00:00,356 - INFO - Clicking element: ('xpath', "//button[text()='Sign Up']")
+2025-09-06 00:00:01,480 - INFO - Typing into element: ('id', 'login-username') -> testuser
+2025-09-06 00:00:01,645 - INFO - Typing into element: ('id', 'login-password') -> test@123
+2025-09-06 00:00:01,776 - INFO - Clicking element: ('xpath', "//button[text()='Login']")
+2025-09-06 00:00:01,941 - INFO - Logged in as testuser
+2025-09-06 00:00:01,941 - INFO - Step passed: the user is logged in
+2025-09-06 00:00:01,941 - INFO - Uploading large image (>5MB)
+2025-09-06 00:00:01,941 - INFO - Typing into element: ('id', 'profile-pic') -> C:\Users\Nidit.Mehta\Downloads\Siddharth\Assignment\Scripts\test_data/large_image.jpg
+2025-09-06 00:00:02,031 - INFO - Clicking element: ('xpath', "//button[@onclick='uploadProfilePic()']")
+2025-09-06 00:00:02,139 - INFO - Step passed: the user uploads a "large" image
+2025-09-06 00:00:02,141 - INFO - Fetching text from element: ('id', 'upload-msg')
+2025-09-06 00:00:02,175 - INFO - Upload message received: File is too large. Max allowed size is 5MB.
+2025-09-06 00:00:02,175 - INFO - Upload failed
+2025-09-06 00:00:02,175 - INFO - Step passed: the upload should "fail"
+2025-09-06 00:00:04,323 - INFO - ===== Finished scenario: Validate profile picture upload by file size -- @1.1  =====
+2025-09-06 00:00:05,602 - INFO - ===== Starting scenario: Validate profile picture upload by file size -- @1.2  =====
+2025-09-06 00:00:05,697 - INFO - Typing into element: ('id', 'signup-username') -> testuser
+2025-09-06 00:00:05,845 - INFO - Typing into element: ('id', 'signup-password') -> test@123
+2025-09-06 00:00:05,938 - INFO - Clicking element: ('xpath', "//button[text()='Sign Up']")
+2025-09-06 00:00:07,071 - INFO - Typing into element: ('id', 'login-username') -> testuser
+2025-09-06 00:00:07,185 - INFO - Typing into element: ('id', 'login-password') -> test@123
+2025-09-06 00:00:07,285 - INFO - Clicking element: ('xpath', "//button[text()='Login']")
+2025-09-06 00:00:07,372 - INFO - Logged in as testuser
+2025-09-06 00:00:07,372 - INFO - Step passed: the user is logged in
+2025-09-06 00:00:07,372 - INFO - Uploading small image (<=5MB)
+2025-09-06 00:00:07,376 - INFO - Typing into element: ('id', 'profile-pic') -> C:\Users\Nidit.Mehta\Downloads\Siddharth\Assignment\Scripts\test_data/small_image.jpg
+2025-09-06 00:00:07,436 - INFO - Clicking element: ('xpath', "//button[@onclick='uploadProfilePic()']")
+2025-09-06 00:00:07,523 - INFO - Step passed: the user uploads a "small" image
+2025-09-06 00:00:07,523 - INFO - Fetching text from element: ('id', 'upload-msg')
+2025-09-06 00:00:07,552 - INFO - Upload message received: Uploaded: small_image.jpg
+2025-09-06 00:00:07,552 - INFO - Upload succeeded
+2025-09-06 00:00:07,552 - INFO - Step passed: the upload should "succeed"
+2025-09-06 00:00:09,683 - INFO - ===== Finished scenario: Validate profile picture upload by file size -- @1.2  =====
+2025-09-06 00:00:09,686 - INFO - ===== Test Suite Finished =====
+2025-09-06 00:00:09,686 - INFO - 
+Test run completed!
+2025-09-06 00:00:09,686 - INFO - Logs: C:\Users\Nidit.Mehta\Downloads\Siddharth\Assignment\Scripts\reports\2025-09-05_23-59-58\test.log
+2025-09-06 00:00:09,686 - INFO - Screenshots: C:\Users\Nidit.Mehta\Downloads\Siddharth\Assignment\Scripts\reports\2025-09-05_23-59-58\screenshots
+

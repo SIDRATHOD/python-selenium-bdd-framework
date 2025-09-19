@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QA Lead Frontend Flow</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      padding: 2rem;
+      margin: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    }
+    h1, h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    input[type="text"], input[type="password"], input[type="file"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #3498db;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .hidden {
+      display: none;
+    }
+    .form-section {
+      margin-bottom: 2rem;
+    }
+    .message {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #e74c3c;
+    }
+    .success {
+      color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>QA Lead Frontend Flow</h1>
+
+    <div id="signup" class="form-section">
+      <h2>Sign Up</h2>
+      <input type="text" id="signup-username" placeholder="Username" />
+      <input type="password" id="signup-password" placeholder="Password" />
+      <button onclick="signup()">Sign Up</button>
+    </div>
+
+    <div id="login" class="form-section">
+      <h2>Login</h2>
+      <input type="text" id="login-username" placeholder="Username" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+    </div>
+
+    <div id="profile" class="form-section hidden">
+      <h2>Profile</h2>
+      <p id="welcome-msg"></p>
+      <label for="profile-pic">Upload Profile Picture (Max 5MB)</label>
+      <input type="file" id="profile-pic" />
+      <button onclick="uploadProfilePic()">Upload</button>
+      <p id="upload-msg" class="message"></p>
+      <button onclick="logout()" style="background-color:#e74c3c; margin-top: 1rem;">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    function signup() {
+      const username = document.getElementById('signup-username').value.trim();
+      const password = document.getElementById('signup-password').value;
+
+      if (!username || !password) {
+        alert('All fields are required.');
+        return;
+      }
+
+      if (localStorage.getItem(`user-${username}`)) {
+        alert('Username already exists.');
+        return;
+      }
+
+      localStorage.setItem(`user-${username}`, password);
+      alert('Sign-up successful! Please login.');
+    }
+
+    function login() {
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value;
+
+      const storedPassword = localStorage.getItem(`user-${username}`);
+
+      if (!storedPassword || storedPassword !== password) {
+        alert('Invalid username or password.');
+        return;
+      }
+
+      localStorage.setItem('currentUser', username);
+      showProfile(username);
+    }
+
+    function showProfile(username) {
+      document.getElementById('signup').classList.add('hidden');
+      document.getElementById('login').classList.add('hidden');
+      document.getElementById('profile').classList.remove('hidden');
+      document.getElementById('welcome-msg').innerText = `Welcome, ${username}`;
+    }
+
+    function uploadProfilePic() {
+      const fileInput = document.getElementById('profile-pic');
+      const file = fileInput.files[0];
+      const msg = document.getElementById('upload-msg');
+
+      if (!file) {
+        msg.innerText = 'No file selected.';
+        msg.className = 'message';
+        return;
+      }
+
+      if (file.size > 5 * 1024 * 1024) {
+        msg.innerText = 'File is too large. Max allowed size is 5MB.';
+        msg.className = 'message';
+        return;
+      }
+
+      msg.innerText = `Uploaded: ${file.name}`;
+      msg.className = 'message success';
+      localStorage.setItem(`profile-pic-${localStorage.getItem('currentUser')}`, file.name);
+    }
+
+    function logout() {
+      localStorage.removeItem('currentUser');
+      location.reload();
+    }
+  </script>
+</body>
+</html>
