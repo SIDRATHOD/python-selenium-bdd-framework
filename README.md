@@ -18,6 +18,14 @@ The framework is built using:
 qa_profile_upload_test/
 ├── config/                 # Config file
 │   ├── config.json
+├── docs/
+│   ├── plan/
+│   │   ├── cursor_rules.md
+│   │   ├── project_context.md
+│   │   ├── README.md
+│   │   ├── task_summary.md
+│   │   ├── task_template.md
+│   ├── PRD-AI-Self-Healing-Locators.md
 │
 ├── features/               # Feature files & step definitions
 │   ├── profile_page.feature
@@ -33,7 +41,8 @@ qa_profile_upload_test/
 │   ├── auth_page.py
 │   └── profile_page.py
 │
-├── utils/                  # Helpers (logger, page factory, config loader)
+├── utils/                  # Helpers (logger, page factory, config loader, Agent workflow, 
+│                              AI_anlysis, auto fix, healing_report, langgraph workflow)
 │
 ├── tests/test_files/       # Test files (dummy images for upload)
 │   ├── small_image.jpg     # < 5MB
@@ -57,4 +66,4 @@ qa_profile_upload_test/
 
 ## Execution of Tests
 
-- **behave features/profile_upload.feature**
+- **behave features/profile_page.feature**
