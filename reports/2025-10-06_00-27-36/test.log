@@ -1,0 +1,35 @@
+2025-10-06 00:27:36,826 - INFO - ===== Starting Test Suite  =====
+2025-10-06 00:27:38,606 - INFO - ===== Starting scenario: Validate profile picture upload by file size -- @1.1  =====
+2025-10-06 00:27:38,661 - INFO - Typing into element: SIGNUP_USERNAME -> testuser
+2025-10-06 00:27:38,735 - INFO - Typing into element: SIGNUP_PASSWORD -> test@123
+2025-10-06 00:27:38,823 - INFO - Clicking element: SIGNUP_BUTTON
+2025-10-06 00:27:39,891 - INFO - Typing into element: LOGIN_USERNAME -> testuser
+2025-10-06 00:27:39,962 - INFO - Typing into element: LOGIN_PASSWORD -> test@123
+2025-10-06 00:27:40,023 - INFO - Clicking element: LOGIN_BUTTON
+2025-10-06 00:27:40,083 - INFO - Logged in as testuser
+2025-10-06 00:27:40,083 - INFO - Step passed: the user is logged in
+2025-10-06 00:27:40,087 - INFO - Uploading large image (>5MB)
+2025-10-06 00:27:40,088 - INFO - Typing into element: FILE_INPUT -> C:\Users\Nidit.Mehta\Documents\Automation Framework\python-selenium-bdd-framework\test_data/large_image.jpg
+2025-10-06 00:27:40,129 - INFO - Clicking element: UPLOAD_BUTTON
+2025-10-06 00:27:50,462 - ERROR - Element with locator 'UPLOAD_BUTTON' not found. Exception: TimeoutException
+2025-10-06 00:27:50,462 - WARNING - AI Self-healing triggered for locator: UPLOAD_BUTTON due to TimeoutException
+2025-10-06 00:27:50,462 - INFO - Starting artifact collection for locator: UPLOAD_BUTTON
+2025-10-06 00:27:50,566 - INFO - Artifacts collected at: reports\2025-10-06_00-27-36\self_healing\20251006-002750
+2025-10-06 00:28:12,283 - INFO - AI analysis complete. Received 3 candidates. Attempting validation...
+2025-10-06 00:28:12,299 - INFO - Validation successful! Found element with locator: ('xpath', "//div[@id='profile']//button[text()='Upload']")
+2025-10-06 00:28:12,299 - INFO - Auto-fixing code for locator 'UPLOAD_BUTTON'...
+2025-10-06 00:28:12,314 - INFO - Successfully updated profile_locators.py.
+2025-10-06 00:28:12,315 - INFO - Healing report saved to reports\2025-10-06_00-27-36\self_healing\healing_report.json
+2025-10-06 00:28:12,315 - INFO - Self-healing successful! Test will proceed with the new element.
+2025-10-06 00:28:12,353 - INFO - Step passed: the user uploads a "large" image
+2025-10-06 00:28:12,355 - INFO - Fetching text from element: UPLOAD_MSG
+2025-10-06 00:28:12,367 - INFO - Upload message received: File is too large. Max allowed size is 5MB.
+2025-10-06 00:28:12,367 - INFO - Upload failed
+2025-10-06 00:28:12,367 - INFO - Step passed: the upload should "fail"
+2025-10-06 00:28:14,514 - INFO - ===== Finished scenario: Validate profile picture upload by file size -- @1.1  =====
+2025-10-06 00:28:14,514 - INFO - ===== Test Suite Finished =====
+2025-10-06 00:28:14,514 - INFO - 
+Test run completed!
+2025-10-06 00:28:14,514 - INFO - Logs: C:\Users\Nidit.Mehta\Documents\Automation Framework\python-selenium-bdd-framework\reports\2025-10-06_00-27-36\test.log
+2025-10-06 00:28:14,514 - INFO - Screenshots: C:\Users\Nidit.Mehta\Documents\Automation Framework\python-selenium-bdd-framework\reports\2025-10-06_00-27-36\screenshots
+

@@ -1,0 +1,49 @@
+[
+  {
+    "timestamp": 1759690670.5586448,
+    "locator_name": "UPLOAD_BUTTON",
+    "original_locator": [
+      "xpath",
+      "//button[@onclick='uploadProfilePic()']"
+    ],
+    "exception": "TimeoutException",
+    "url": "file:///C:/Users/Nidit.Mehta/Documents/Automation%20Framework/python-selenium-bdd-framework/test_data/qa-lead-assignment-homepage.html",
+    "artifacts": {
+      "dom": "reports\\2025-10-06_00-27-36\\self_healing\\20251006-002750\\dom.html",
+      "screenshot": "reports\\2025-10-06_00-27-36\\self_healing\\20251006-002750\\screenshot.png"
+    },
+    "ai_suggestions": [
+      {
+        "locator": [
+          "xpath",
+          "//div[@id='profile']//button[text()='Upload']"
+        ],
+        "confidence": 0.95,
+        "rationale": "This is the most robust locator. It first uniquely identifies the parent 'profile' container by its stable ID, then finds the button by its visible text 'Upload'. This approach is highly resistant to structural changes and is not tied to implementation details like JavaScript function names."
+      },
+      {
+        "locator": [
+          "xpath",
+          "//input[@id='profile-pic']/following-sibling::button[1]"
+        ],
+        "confidence": 0.85,
+        "rationale": "This locator leverages the stable and unique ID of the preceding file input element ('profile-pic') and finds the button based on its position relative to it. This is a strong choice as the input and its corresponding upload button are functionally linked."
+      },
+      {
+        "locator": [
+          "xpath",
+          "//button[@onclick='uploadProPic()']"
+        ],
+        "confidence": 0.7,
+        "rationale": "This is a direct fix for the typo in the original locator (the function is 'uploadProPic()', not 'uploadProfilePic()'). While it works, it's considered less reliable because it's tightly coupled to the JavaScript implementation, which could change and break the test."
+      }
+    ],
+    "healed": true,
+    "healed_with": [
+      "xpath",
+      "//div[@id='profile']//button[text()='Upload']"
+    ],
+    "confidence": 0.95,
+    "auto_fix_status": "Success"
+  }
+]
