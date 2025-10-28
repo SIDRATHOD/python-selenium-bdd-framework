@@ -57,4 +57,4 @@ qa_profile_upload_test/
 
 ## Execution of Tests
 
-- **behave features/profile_upload.feature**
+- **behave features/profile_page.feature**
