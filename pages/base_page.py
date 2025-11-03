@@ -3,7 +3,7 @@ import time
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, StaleElementReferenceException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from utils.config_loader import load_healing_config
+from utils.config_loader import load_config
 from utils.healer import Healer
 # Make sure to import the Locator object if it's not already
 from utils.locator import Locator
@@ -15,7 +15,7 @@ class BasePage:
         self.timeout = timeout
         self.logger = logger
         self.report_dir = report_dir
-        self.healing_config = load_healing_config().get("self_healing", {})
+        self.healing_config = load_config()
 
     def _find_element(self, locator: Locator, condition):
         """
@@ -28,8 +28,9 @@ class BasePage:
             return element
         except (TimeoutException, NoSuchElementException, StaleElementReferenceException) as e:
             self.logger.error(f"Element with locator '{locator.name}' not found. Exception: {e.__class__.__name__}")
-
-            if self.healing_config.get("enabled", False):
+            self.logger.info(f"self.healing_config: {self.healing_config}")
+            self_healing_config = self.healing_config.get("self_healing_config", {})
+            if self_healing_config.get("enabled", False):
                 # Pass the full Locator object to the Healer
                 healer = Healer(self.driver, locator, self.report_dir, self.logger, config=self.healing_config)
                 healed_element = healer.attempt_healing(e)

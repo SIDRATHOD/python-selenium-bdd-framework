@@ -3,3 +3,4 @@ selenium==4.35.0
 PyYAML
 langgraph
 google-generativeai
+anthropic

@@ -79,7 +79,10 @@ class Healer:
         with open(dom_path, "r", encoding="utf-8") as f:
             dom_content = f.read()
 
-        preferences = self.config.get("selector_preferences", [])
+        self_healing_config = self.config.get("self_healing_config", {})
+        preferences = self_healing_config.get("selector_preferences")
+        self.logger.info("Starting AI analysis...")
+        self.logger.debug(f"AI analysis preferences: {preferences}")
         ai_result = get_ai_suggestion(dom_content, self.locator.value, type(exception).__name__, preferences)
 
         if not ai_result or not ai_result.get("candidates"):
@@ -101,9 +104,10 @@ class Healer:
                     'healed_with': new_locator_tuple,
                     'confidence': candidate['confidence']
                 })
-
+                healing_mode = self_healing_config.get("mode")
+                self.logger.debug(f"AI analysis preferences: {healing_mode}")
                 # --- AUTO-FIX LOGIC ---
-                if self.config.get("mode") == "auto":
+                if healing_mode == "auto":
                     self.logger.info(f"Auto-fixing code for locator '{self.locator.name}'...")
                     fix_successful = rewrite_locator_file(
                         self.locator.file_path,

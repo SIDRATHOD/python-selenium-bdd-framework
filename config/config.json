@@ -3,5 +3,19 @@
   "username": "testuser",
   "password": "test@123",
   "small_image": "test_data/small_image.jpg",
-  "large_image": "test_data/large_image.jpg"
+  "large_image": "test_data/large_image.jpg",
+  "ai_provider": "gemini",
+  "gemini": {
+    "api_key": "API_KEY",
+    "model": "gemini-2.5-pro"
+    },
+  "anthropic": {
+    "api_key": "API_KEY",
+    "model": "claude-sonnet-4-5-20250929"
+    },
+  "self_healing_config": {
+    "enabled": true,
+    "mode": "auto",
+    "selector_preferences": ["id", "name", "css", "xpath"]
+    }
 }
