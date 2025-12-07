@@ -1,8 +1,9 @@
 import json
 import os
+import yaml
 
 def load_config():
-    
+
     file_path = os.path.join("config", f"config.json")
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"Config file not found at {file_path}")
@@ -20,5 +21,7 @@ def load_config():
     # Resolve test file paths
     config["small_image"] = os.path.join(project_root, config["small_image"])
     config["large_image"] = os.path.join(project_root, config["large_image"])
+
+    config["prompt_dir"] = os.path.join(project_root, "prompts")
 
     return config
